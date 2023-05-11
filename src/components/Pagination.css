@@ -1,0 +1,80 @@
+
+:root {
+	--page-color: #aaa;
+	--active-page-bg: #fff;
+	--active-page-color: #000;
+	--page-hover-color: #353535;
+}
+
+.light-mode {
+	--page-color: #555;
+	--active-page-bg: #555;
+	--page-hover-color: #bbb;
+	--active-page-color: #fff;	
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.pagination > i {
+	color: #777;
+	cursor: pointer;
+}
+
+.pagination > i.disabled {
+	color: #333;
+	cursor: auto;
+}
+
+.pagination-pages {
+	gap: 10px;
+	display: flex;
+	width: max-content;
+	justify-content: space-between;	
+}
+
+.pagination-pages_page {
+	width: 30px;
+	color: var(--page-color);
+	height: 30px;
+	display: grid;
+	cursor: pointer;
+	border-radius: 8px;
+	place-content: center;
+	border: 1px solid #555555;
+}
+
+.pagination-pages_page:hover {
+	background: var(--page-hover-color);
+}
+
+.active-page {
+	background-color: var(--active-page-bg);
+	color: var(--active-page-color);
+}
+
+.dots {
+	color: #454545;
+	font-weight: 900;
+	font-size: 1.2rem;
+	width: 30px;
+	text-align: center;
+}
+
+.settings {
+	display: grid;
+	grid-auto-flow: column;
+	/*grid-template-rows: 1fr min-content;*/
+	grid-template-columns: repeat(4, min-content);
+	align-items: center;
+	column-gap: 20px;
+	color: #fff;
+}
+
+.settings > input {
+	text-indent: 5px;
+	width: 50px;
+}

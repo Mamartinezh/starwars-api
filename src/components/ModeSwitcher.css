@@ -1,0 +1,63 @@
+
+:root {
+	--switcher-border: #656565;
+	--moon-color: #eee;
+	--sun-color: #151515;
+}
+
+.light-mode {
+	--switcher-border: #252525;
+	--moon-color: #bbb;
+	--sun-color: #000;
+}
+
+.switcher {
+	width: 30px;
+	padding: 3px;
+	height: 15px;
+	cursor: pointer;
+	position: relative;
+	background: inherit;
+	border-radius: 30px;
+	outline: 3px solid var(--switcher-border);
+}
+
+.switcher.active {
+	outline-color: var(--switcher-border);
+}
+
+.switcher > i {
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.switcher > i:last-child {
+	right: -25px;
+	color: var(--sun-color);
+}
+
+.switcher > i:first-child {
+	left: -20px;
+	color: var(--moon-color);
+}
+
+.switcher::before {
+	top: 0;
+	bottom: 0;
+	content: '';
+	margin: auto;
+	aspect-ratio: 1;
+	position: absolute;
+	border-radius: 50%;
+	background: #959595;
+	height: calc(100% - 3px);
+}
+
+.switcher:hover::before {
+	background: #757575;	
+}
+
+.switcher.active::before {
+	right: 2px;
+}

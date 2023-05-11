@@ -1,0 +1,98 @@
+
+:root {
+	--card-bg: #252525;
+	--name-color: #fff;
+	--card-shadow: #353535;
+	--info-color: #aaa;
+	--loader-color: #fff;
+	
+}
+
+.light-mode {
+	--card-bg: #fff;
+	--name-color: #000;	
+	--card-shadow: #ccc;
+	--info-color: #333;
+	--loader-color: #000;
+}
+
+.card {
+	width: 250px;
+	height: 380px;
+	display: grid;
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+	background: var(--card-bg);
+	grid-template-rows: 1fr 140px;
+	box-shadow: 3px 2px 10px 0 var(--card-shadow);
+}
+
+.card-number {
+	color: #fff;
+	font-weight: 700;
+	font-size: 0.9rem;
+	padding: 5px 15px;
+	position: absolute;
+	background: #000000bb;
+	border-radius: 10px 5px 5px 5px;
+}
+
+.card-img {
+	overflow: hidden;
+	object-fit: contain;
+	object-position: center;
+}
+
+.card-info {
+	gap: 3px;
+	padding: 10px;
+	display: flex;
+	background: inherit;
+	flex-direction: column;
+}
+
+.card-info_name {
+	font-weight: 900;
+	font-size: 1.1rem;
+	margin-bottom: 8px;
+	color: var(--name-color);
+}
+
+.card-info:not(:first-child) {
+	font-size: 0.9rem;
+	color: var(--info-color);
+}
+
+.card-loader {
+	width: 80px;
+	height: 80px;
+	margin: auto;
+	position: relative;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: var(--loader-color);
+	border-right-color: var(--loader-color);
+	animation: animLoader 3s infinite linear;
+}
+
+.card-loader::before {
+	content: '';
+	inset: 10px;
+	border-radius: 50%;
+	position: absolute;
+	transform: rotateZ(180deg);
+	border: 3px solid transparent;
+	border-top-color: var(--loader-color);
+	border-right-color: var(--loader-color);
+	animation: animLoader 1.5s infinite linear reverse;
+}
+
+@keyframes animLoader {
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+	}
+}
